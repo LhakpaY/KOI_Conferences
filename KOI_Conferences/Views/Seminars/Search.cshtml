@@ -1,0 +1,33 @@
+﻿@model IEnumerable<KOI_Conferences.Models.Seminar>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Seminar Results</h2>
+
+<table border="1">
+    <tr>
+        <td> Name </td>
+        <td> Type </td>
+        <td> Registration Fee </td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @item.Name </td>
+            <td> @item.SeminarType </td>
+            <td> @item.RegistrationFee </td>
+        </tr>
+    }
+</table>
+
+<style>
+    html, body {
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        background-image: linear-gradient(95.2deg, rgb(104, 229, 234) 26.8%, rgb(30, 81, 107) 64%);
+    }
+</style>

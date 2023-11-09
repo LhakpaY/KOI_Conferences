@@ -1,0 +1,299 @@
+﻿@{
+    ViewBag.Title = "About";
+    var imagePath = "";
+    if (Request["photoChoice"] != null)
+    {
+        imagePath = @"images\" + Request["photoChoice"];
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+
+        /* Styling the body */
+        body {
+            background-repeat: no-repeat;
+            background-size: 100%;
+            align-items: center;
+            justify-content: center;
+            background-image: url("../../Images/Seminar.jpeg");
+            background-position: 100%;
+        }
+
+        .rainbow-text {
+            font-family: Arial;
+            font-weight: bold;
+            font-size: 40px;
+            text-shadow: #A3A3A3 1px 1px 1px;
+        }
+
+            .rainbow-text .block-line > span {
+                display: inline-block;
+            }
+        /* Styling section, giving background
+            image and dimensions */
+        section {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+        }
+
+            /* Styling the left floating section */
+            section .leftBox {
+                width: 50%;
+                height: 100%;
+                float: left;
+                padding: 40px;
+                box-sizing: border-box;
+            }
+
+                /* Styling the background of
+            left floating section */
+                section .leftBox .content {
+                    color: #fff;
+                    background: rgba(0, 0, 0, 0.5);
+                    padding: 30px;
+                    transition: .5s;
+                }
+
+                    /* Styling the hover effect
+            of left floating section */
+                    section .leftBox .content:hover {
+                        background: #d5b2bd;
+                    }
+
+                    /* Styling the header of left
+            floating section */
+                    section .leftBox .content h1 {
+                        margin: 0;
+                        padding: 0;
+                        font-size: 30px;
+                        text-transform: uppercase;
+                    }
+
+                    /* Styling the paragraph of
+            left floating section */
+                    section .leftBox .content p {
+                        margin: 7px 0 0;
+                        padding: 0;
+                    }
+
+            /* Styling the three events section */
+            section .events {
+                position: relative;
+                width: 45%;
+                height: 15%;
+                background: rgba(0, 0, 0, 0.5);
+                float: right;
+                box-sizing: border-box;
+            }
+
+                /* Styling the links of
+        the events section */
+                section .events ul {
+                    position: absolute;
+                    top: 15%;
+                    bottom: 18%;
+                    transform: translateY(-50%);
+                    margin: 0;
+                    padding: 5px;
+                    box-sizing: border-box;
+                }
+
+                    /* Styling the lists of the event section */
+                    section .events ul li {
+                        list-style: none;
+                        background: #fff;
+                        box-sizing: border-box;
+                        height: 150px;
+                        margin: 15px 0;
+                    }
+
+                        /* Styling the time class of events section */
+                        section .events ul li .time {
+                            position: relative;
+                            padding: 15px;
+                            background: #262626;
+                            box-sizing: border-box;
+                            width: 30%;
+                            height: 100%;
+                            float: left;
+                            text-align: center;
+                            transition: .5s;
+                        }
+
+                        /* Styling the hover effect
+            of events section */
+                        section .events ul li:hover .time {
+                            background: #925066;
+                            padding: 3px;
+                        }
+
+                        /* Styling the header of time
+            class of events section */
+                        section .events ul li .time h2 {
+                            position: absolute;
+                            margin: 0;
+                            padding: 0;
+                            top: 40%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: #fff;
+                            font-size: 50px;
+                            line-height: 30px;
+                        }
+
+                            /* Styling the texts of time
+        class of events section */
+                            section .events ul li .time h2 span {
+                                font-size: 20px;
+                            }
+
+                        /* Styling the details
+        class of events section */
+                        section .events ul li .details {
+                            padding: 3px;
+                            background: #fff;
+                            box-sizing: border-box;
+                            width: 70%;
+                            height: 80%;
+                            float: left;
+                            font-size: 5px;
+                        }
+
+                            /* Styling the header of the
+        details class of events section */
+                            section .events ul li .details h3 {
+                                position: relative;
+                                margin: 0;
+                                padding: 0;
+                                font-size: 14px;
+                                color: brown;
+                            }
+
+                            /* Styling the lists of details
+        class of events section */
+                            section .events ul li .details p {
+                                position: relative;
+                                margin: 10px 0 0;
+                                padding: 0;
+                                font-size: 12px;
+                            }
+
+                            /* Styling the links of details
+        class of events section */
+                            section .events ul li .details a {
+                                display: inline-block;
+                                text-decoration: none;
+                                padding: 8px 10px;
+                                border: 1.5px solid #262626;
+                                margin-top: 5px;
+                                font-size: 18px;
+                                transition: .5s;
+                            }
+
+                                /* Styling the details class's hover effect */
+                                section .events ul li .details a:hover {
+                                    background: #e91e63;
+                                    color: #fff;
+                                    border-color: #e91e63;
+                                }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="leftBox">
+            <div class="content">
+                <div class="rainbow-text" style="text-align: center;">
+                    <span class="block-line"><span><span style="color:#ff0000;">C</span><span style="color:#ff8c00;">o</span><span style="color:#e6ff00;">n</span><span style="color:#59ff00;">f</span><span style="color:#00ff2f;">e</span><span style="color:#00ffbb;">r</span><span style="color:#00b7ff;">e</span><span style="color:#002bff;">n</span><span style="color:#5e00ff;">c</span><span style="color:#ea00ff;">e</span><span style="color:#ff0088;">s</span></span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="events">
+            <ul>
+                <li>
+                    <div class="time">
+                        <h2>
+                            25 <br><span>September</span>
+                        </h2>
+                    </div>
+                    <div class="details">
+                        <h3>
+                            Student Seminar
+                        </h3>
+                        <p>
+                            Student Seminars provide an opportunity for a group of students to discuss and analyse a range of new material, ideas and concepts together with the tutor.
+                        </p>
+                        @Html.ActionLink("Join Seminar", "Login")
+
+                    </div>
+                    <div style="clear: both;"></div>
+                </li>
+
+                <li>
+                    <div class="time">
+                        <h2>
+                            27 <br><span>September</span>
+                        </h2>
+                    </div>
+                    <div class="details">
+                        <h3>
+                            Faculty Seminar
+                        </h3>
+                        <p>
+                            The intent of Faculty Seminars is to deepen and enrich the teaching practice of faculty by focusing on an aspect of their teaching.
+                        </p>
+
+                        @Html.ActionLink("Join Seminar", "Login")
+                    </div>
+                    <div style="clear:both;"></div>
+                </li>
+
+                <li>
+                    <div class="time">
+                        <h2>
+                            1 <br><span>October</span>
+                        </h2>
+                    </div>
+                    <div class="details">
+                        <h3>
+                            Instructor Seminar
+                        </h3>
+                        <p>
+                            This Seminar will focus on learning goals and objectives and this seminar also explains how to utilize these topics to create effective training session.
+                        </p>
+
+
+                        @Html.ActionLink("Join Seminar", "Login")
+                    </div>
+                    <div style="clear:both;"></div>
+                </li>
+                <li>
+                    <div class="time">
+                        <h2>
+                            7 <br><span>October</span>
+                        </h2>
+                    </div>
+                    <div class="details">
+                        <h3>
+                            Employee Seminar
+                        </h3>
+                        <p>
+                            This Seminar enhance employee performance, boost employee productivity, reduce employee turnover, and improve company culture.
+                        </p>
+
+                        @Html.ActionLink("Join Seminar", "Login")
+                    </div>
+                    <div style="clear:both;"></div>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>

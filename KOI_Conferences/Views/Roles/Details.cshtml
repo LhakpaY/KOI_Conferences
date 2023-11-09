@@ -1,0 +1,35 @@
+﻿@model KOI_Conferences.Models.Role
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Role</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoleName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<style>
+    html, body {
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        background-image: linear-gradient(95.2deg, rgb(128 209 170) 26.8%, rgb(141 181 200) 64%);
+    }
+</style>

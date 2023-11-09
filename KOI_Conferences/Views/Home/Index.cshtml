@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var imagePath = "";
+    if (Request["photoChoice"] != null)
+    {
+        imagePath = @"images\" + Request["photoChoice"];
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        html,
+        body {
+            background-repeat: no-repeat;
+            background-size: 100%;
+            align-items: center;
+            justify-content: center;
+            background-image: url('../../Images/Sundar.png');
+        }
+
+        .rainbow-text {
+            font-family: Arial;
+            font-weight: bold;
+            font-size: 40px;
+            text-shadow: #A3A3A3 1px 1px 1px;
+        }
+
+            .rainbow-text .block-line > span {
+                display: inline-block;
+            }
+
+        .text-capitalize {
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+            width: 100%;
+            max-width: 800px;
+            letter-spacing: -.5px;
+            align-content: space-between;
+        }
+
+        table {
+            position: relative;
+            left: 25%;
+            top: 50px;
+        }
+
+        table, th, td {
+            border: 1px solid rgb(129, 102, 102);
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px;
+            background-color: rgb(170, 183, 194);
+        }
+    </style>
+</head>
+<body>
+    <div class="rainbow-text" style="text-align: center;">
+        <span class="block-line"><span><span style="color:#ff0000;">C</span><span style="color:#ff8c00;">o</span><span style="color:#e6ff00;">n</span><span style="color:#59ff00;">f</span><span style="color:#00ff2f;">e</span><span style="color:#00ffbb;">r</span><span style="color:#00b7ff;">e</span><span style="color:#002bff;">n</span><span style="color:#5e00ff;">c</span><span style="color:#ea00ff;">e</span><span style="color:#ff0088;">s</span></span></span>
+    </div>
+    <div class="text-capitalize">
+        <table align="center">
+            <th colspan="2">Group Members</th>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+            </tr>
+            <tr>
+                <td>12100976</td>
+                <td>Lhakpa Yangjee Sherpa</td>
+            </tr>
+            <tr>
+                <td>12100723</td>
+                <td>Linh</td>
+            </tr>
+            <tr>
+                <td>12100906</td>
+                <td>Sapana Poudel</td>
+            </tr>
+            <tr>
+                <td>12100044</td>
+                <td>Saroj Basnet</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

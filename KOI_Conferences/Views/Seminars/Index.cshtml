@@ -1,0 +1,56 @@
+﻿@model IEnumerable<KOI_Conferences.Models.Seminar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2> List of Seminars</h2>
+<form action="/Seminars/Search" method="get">
+    <lebel> Search for Seminar by title</lebel>
+    <input type="text" name="SeminarType" />
+    <input type="submit" value="Search" />
+</form>
+
+<h2>Seminars</h2>
+<div class="form-group">
+    <button type="submit"> @Html.ActionLink("Join Seminar", "Create", "Registrations") </button>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeminarType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationFee)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeminarType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationFee)
+            </td>
+        </tr>
+    }
+
+</table>
+</div>
+<style>
+    html, body {
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        background-image: linear-gradient(95.2deg, rgb(104, 229, 234) 26.8%, rgb(30, 81, 107) 64%);
+    }
+</style>

@@ -1,0 +1,55 @@
+﻿@model KOI_Conferences.Models.User
+
+@{
+    ViewBag.Title = "Register";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card custom-card">
+        <div class="card-header bg-primary text-white">
+            <h3>Register Form</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                @Html.LabelFor(m => m.FullName)
+                @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FullName)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PhoneNumber)
+                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.PhoneNumber)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary rounded-0">Register</button>
+                @Html.ActionLink("Login here", "Login")
+            </div>
+        </div>
+    </div>
+}
+<style>
+    html, body {
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        background-image: linear-gradient(95.2deg, rgb(145,189,209) 26.8%, rgb(131, 202, 239) 64%);
+    }
+</style>

@@ -1,0 +1,41 @@
+﻿@model KOI_Conferences.Models.User
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card custom-card">
+        <div class="card-header bg-primary text-white">
+            <h3>Login Form</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div class="form-group">
+                <button type="submit"> @Html.ActionLink("Login", "Index", "Seminars") </button>
+                @Html.ActionLink("New User", "Register")
+            </div>
+
+        </div>
+    </div>
+}
+<style>
+    html, body {
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        background-image: linear-gradient(95.2deg, rgb(171 211 244) 26.8%, rgb(130 195 184) 64%);
+    }
+</style>

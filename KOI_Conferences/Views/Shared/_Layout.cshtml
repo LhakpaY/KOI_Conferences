@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - KOI Conferences</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Seminars", "Index", "Seminars", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Seminar List", "Index", "Seminars")</li>
+                        <li>@Html.ActionLink("Add New Seminars", "Create", "Seminars")</li>
+                        <li><a>Hello - @User.Identity.Name</a></li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+
+                        /*@if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li>@Html.ActionLink("Create Seminar", "Create", "Seminars", new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Edit Seminar", "Edit", "Seminars", new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Delete Seminar", "Delete", "Seminars", new { @class = "nav-link float-left" })</li>
+                                    <li>@Html.ActionLink("Create User", "Create", "Users", new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Edit User", "Edit", "Users", new { @class = "nav-link" })</li>
+                                    <li>@Html.ActionLink("Delete User", "Delete", "Users", new { @class = "nav-link float-left" })</li>
+                                    <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                                    }
+                                </ul>
+                            </div>
+
+                        }*/
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Register", "Register", "Home", new { @class = "nav-link float-left" })</li>
+                        <li>@Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link float-left" })</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - KOI Conferences</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
